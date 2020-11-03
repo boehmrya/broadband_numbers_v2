@@ -15,10 +15,19 @@ jQuery(function($){
     overflowScroll: true,
     updateHash: true,
     touchScroll:true,
-    before:function() {},
-    after:function() {},
+    before:function(index, elements) {
+      
+    },
+    after:function(index, elements) {
+      $('.story-wrap .story').removeClass('active');
+      elements[index].addClass('active');
+    },
     afterResize:function() {},
     afterRender:function() {}
+  });
+
+  $('.top-section-text .down-arrow').on('click', function() {
+    $.scrollify.move("#speed");
   });
 
   // initialize d3 charts

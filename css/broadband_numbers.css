@@ -55,6 +55,7 @@ h2.story-title {
   padding: 45px 15px;
   width: 1170px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .content {
@@ -448,8 +449,24 @@ h2.story-title {
   background-image: url('../images/city_view.jpg');
 }
 
+.story.image-section.stats-row .image-wrap {
+  background-image: url('../images/freeway_dusk.jpg');
+}
+
 .story.image-section .image-wrap .wrap {
   padding-bottom: 0;
+}
+
+.story.image-section .stat-block.one {
+  position: relative;
+  top: 20%;
+  transform: translateY(-20%);
+}
+
+.story.image-section .stat-block.two {
+  position: relative;
+  top: 60%;
+  transform: translateY(-60%);
 }
 
 .story.image-section .stat-line {
