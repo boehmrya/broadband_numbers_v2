@@ -150,7 +150,6 @@ h2.story-title {
   text-align: center;
   padding: 0 15px;
   margin-top: 22.5px;
-
   clear: both;
 }
 
@@ -278,6 +277,7 @@ h2.story-title {
 .text-group.reveal {
   opacity: 0;
   transition: all 0.5s;
+  transition-delay: 0.5s;
   transition-timing-function: ease;
 }
 
@@ -335,6 +335,7 @@ h2.story-title {
 .cost-chart .tick text {
   transform: translate(0, 15px);
   font-size: 1.5rem;
+  fill: #fff;
 }
 
 .adoption-chart .y.axis .tick text,
@@ -537,11 +538,15 @@ h2.story-title {
   background: #343F49;
 }
 
+.story.blue .stat-source {
+  color: #fff;
+}
+
 h2.section-title {
   font-size: 2.5rem;
   letter-spacing: -.2px;
   line-height: 2.5rem;
-  margin-top: 11.25px;
+  margin-top: 0;
   margin-bottom: 0;
   color: #343F49;
 }

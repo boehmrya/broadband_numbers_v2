@@ -437,8 +437,8 @@ jQuery(function($){
         .attr("fill", "#E71B4F")
         .attr("d", initialArea) // initial state (line at the bottom)
         .transition()
-        .duration(2500)
-        .ease("circle")
+        .duration(2000)
+        .ease("linear")
         .attr("d", area);
   }
 
@@ -498,9 +498,9 @@ jQuery(function($){
         .orient("left");
 
     initialArea = d3.svg.area()
-        .x(function(d) { return x(d.year); })
-        .y0(0)
-        .y1(height);
+      .x(0)
+      .y0(height)
+      .y1(height);
 
     area = d3.svg.area()
         .x(function(d) { return x(d.year); })
@@ -548,7 +548,7 @@ jQuery(function($){
         .attr("fill", "#5AC9E7")
         .attr("d", initialArea) // initial state (line at the bottom)
         .transition()
-        .duration(1500)
+        .duration(2000)
         .ease("linear")
         .attr("d", area);
   }
@@ -670,8 +670,8 @@ jQuery(function($){
         .attr("height", 0);
 
   bar.transition()
-      .duration(3000)
-      .ease("elastic")
+      .duration(2000)
+      .ease("quad-in-out")
       .delay(function(d, i) {
         return i / data.length * 1000;  // Dynamic delay (each item delays a little longer)
       })
@@ -809,16 +809,19 @@ jQuery(function($){
 
   bar.transition()
       .duration(2000)
-      .ease("quad-in-out")
+      .ease("linear")
       .attr("y", function(d) { return y(d.cost); })
       .attr("height", function(d) { return height - y(d.cost); })
       .each("end", function() {
         d3.selectAll(".cost-chart-bar-label").attr("class", function(d) {
+          return 'cost-chart-bar-label white reveal';
+          /*
           var year = d.year.getFullYear();
           if (year == 2000) {
             return 'cost-chart-bar-label white reveal';
           }
           return 'cost-chart-bar-label red reveal';
+          */
         })
       });
 
