@@ -486,7 +486,7 @@ h2.story-title {
   font-size: 1.125rem;
 }
 
-.down-arrow {
+.top-section-text .down-arrow {
   border: solid #fff;
   border-width: 0 4px 4px 0;
   display: inline-block;
@@ -499,14 +499,16 @@ h2.story-title {
 
 .story-wrap {
   height: 100vh;
+  /*
   overflow: scroll;
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(100vh);
+  */
 }
 
 .story {
   height: 100vh;
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
   position: relative;
 }
 
@@ -529,6 +531,19 @@ h2.story-title {
 
 .story.blue {
   background: #343F49;
+}
+
+h2.section-title {
+  font-size: 2.5rem;
+  letter-spacing: -.2px;
+  line-height: 2.5rem;
+  margin-top: 11.25px;
+  margin-bottom: 0;
+  color: #343F49;
+}
+
+.story.chart-section {
+  padding: 45px 0px;
 }
 
 .story.blue h2.section-title,
