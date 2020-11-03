@@ -2,6 +2,25 @@ jQuery(function($){
   // initialize animations
   AOS.init();
 
+  $.scrollify({
+    section : ".story-wrap .story",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: true,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+  });
+
   // initialize d3 charts
   buildCharts();
 

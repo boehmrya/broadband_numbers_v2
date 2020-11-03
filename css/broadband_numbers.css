@@ -52,7 +52,7 @@ h2.story-title {
 }
 
 .wrap {
-  padding: 0px 15px 90px 15px;
+  padding: 45px 15px;
   width: 1170px;
   margin: 0 auto;
 }
@@ -132,14 +132,6 @@ h2.story-title {
   max-width: 770px;
 }
 
-.stat-col {
-  text-align: center;
-}
-
-.stats-section .stat-col.single {
-  float: left;
-}
-
 .story.speed .intro {
   margin-bottom: 0;
 }
@@ -155,19 +147,30 @@ h2.story-title {
 }
 
 .stat-col.three-col {
-  float: left;
-  width: 33%;
   text-align: center;
   padding: 0 15px;
+  margin-top: 22.5px;
+
+  clear: both;
 }
 
 .stat-wrap {
   width: 280px;
-  margin: 0 auto;
+}
+
+.stat-col.three-col.one,
+.stat-col.three-col.three {
+  float: left;
+  margin-left: 90px;
+}
+
+.stat-col.three-col.two {
+  float: right;
+  margin-right: 90px;
 }
 
 .stat-num {
-  color: #E71B4F;
+  color: #fff;
   font-size: 4rem;
   line-height: 3rem;
   font-weight: bold;
@@ -184,7 +187,7 @@ h2.story-title {
 }
 
 .stat-label {
-  color: #5AC9E7;
+  color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.5rem;
@@ -192,6 +195,7 @@ h2.story-title {
 }
 
 .stat-text {
+  color: #fff;
   font-size: 1.25rem;
   line-height: 1.5rem;
   margin-top: 11.25px;
@@ -540,10 +544,6 @@ h2.section-title {
   margin-top: 11.25px;
   margin-bottom: 0;
   color: #343F49;
-}
-
-.story.chart-section {
-  padding: 45px 0px;
 }
 
 .story.blue h2.section-title,
