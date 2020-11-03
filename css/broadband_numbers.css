@@ -1,7 +1,6 @@
 
 
 body {
-  /*background: #F5F5F8;*/
   background: #fff;
   color: #343F49;
 }
@@ -30,7 +29,7 @@ h1.page-title {
   margin: 0;
 }
 
-h2.section-title {
+h2.story-title {
   font-size: 2.5rem;
   letter-spacing: -.2px;
   line-height: 2.5rem;
@@ -64,19 +63,19 @@ h2.section-title {
 }
 
 .intro-text,
-.intro .section-text {
+.intro .story-text {
   margin-top: 22.5px;
 }
 
 .wrap::after,
 .stats-section::after,
-.chart-section::after {
+.chart-block::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.chart-section {
+.chart-block {
   margin-top: 45px;
 }
 
@@ -84,15 +83,15 @@ h2.section-title {
   width: 100%;
 }
 
-.section.speed .stats-section {
+.story.speed .stats-section {
   margin-top: 90px;
 }
 
-.section.speed .chart-section {
+.story.speed .chart-block {
   margin-top: 0;
 }
 
-.section-text,
+.story-text,
 .chart-text {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -102,7 +101,7 @@ h2.section-title {
   margin-top: 22.5px;
 }
 
-.section-text p:last-child,
+.story-text p:last-child,
 .chart-text p:last-child {
   margin-bottom: 0;
 }
@@ -112,11 +111,11 @@ h2.section-title {
 }
 
 .chart-text p,
-.section-text p {
+.story-text p {
   margin-top: 0;
 }
 
-.stats-section .section-text {
+.stats-section .story-text {
   float: left;
   margin-right: 90px;
   max-width: 770px;
@@ -130,15 +129,15 @@ h2.section-title {
   float: left;
 }
 
-.section.speed .intro {
+.story.speed .intro {
   margin-bottom: 0;
 }
 
-.section.speed .chart-section {
+.story.speed .chart-block {
   position: relative;
 }
 
-.section.speed .chart-text {
+.story.speed .chart-text {
   position: absolute;
   left: 0;
   top: 0;
@@ -201,7 +200,7 @@ h2.section-title {
   color: #ccc;
 }
 
-.section.paralax .stat-source {
+.story.image-section .stat-source {
   text-align: center;
   color: #fff;
   position: relative;
@@ -347,13 +346,13 @@ h2.section-title {
   position: relative;
 }
 
-.section.cost .chart-wrap {
+.story.cost .chart-wrap {
   float: left;
   width: 690px;
   margin-right: 90px;
 }
 
-.section.cost .shape-wrap {
+.story.cost .shape-wrap {
   float: left;
   width: 300px;
 }
@@ -399,13 +398,13 @@ h2.section-title {
   border-top: 150px solid #5AC9E7;
 }
 
-.section.paralax {
+.story.image-section {
   background: #000;
   position: relative;
   margin-bottom: 90px;
 }
 
-.section.paralax::before {
+.story.image-section::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -417,52 +416,50 @@ h2.section-title {
   content: "";
 }
 
-.section.paralax .outer-wrap {
-  padding: 112.5px 0;
-  background-image: url('../images/globe.jpg');
+.story.image-section .image-wrap {
   background-size: cover!important;
   background-attachment: fixed;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.section.paralax.wifi .outer-wrap {
-  background-image: url('../images/globe.jpg');
+.story.top.image-section .image-wrap {
+  background-image: url('../images/bb_numbers_header.jpg');
 }
 
-.section.paralax.network .outer-wrap {
-  background-image: url('../images/earth.jpg');
+.story.image-section.stats-blocks .image-wrap {
+  background-image: url('../images/city_view.jpg');
 }
 
-.section.paralax .outer-wrap .wrap {
+.story.image-section .image-wrap .wrap {
   padding-bottom: 0;
 }
 
-.section.paralax .stat-line {
+.story.image-section .stat-line {
   color: #fff;
   text-align: center;
   position: relative;
 }
 
-.section.paralax .stat-line.one {
+.story.image-section .stat-line.one {
   font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: bold;
 }
 
-.section.paralax .stat-line.two {
+.story.image-section .stat-line.two {
   font-size: 1.5rem;
   line-height: 1.5rem;
   margin-top: 22.5px;
 }
 
-.section.speed text.speed.num {
+.story.speed text.speed.num {
   font-size: 32px;
   font-weight: bold;
   opacity: 0;
 }
 
-.section.speed text.speed.label {
+.story.speed text.speed.label {
   font-size: 16px;
   opacity: 0;
 }
@@ -475,6 +472,73 @@ h2.section-title {
 
 .axis-label {
   font-size: 1.125rem;
+}
+
+.down-arrow {
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 12px;
+  margin-top: 40px;
+ -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+.story-wrap {
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100vh);
+}
+
+.story {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.story .image {
+  background: #000;
+  position: relative;
+}
+
+.story img {
+  opacity: 0.5;
+}
+
+.story.white {
+  background: #fff;
+}
+
+.story.gray {
+  background: #F5F5F8;
+}
+
+.story.blue {
+  background: #343F49;
+}
+
+.story.blue h2.section-title,
+.story.image-section h2.section-title {
+  color: #fff;
+}
+
+.story.blue .section-text,
+.story.image-section .section-text {
+  color: #fff;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-30px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(-15px) rotate(45deg);
+  }
 }
 
 
@@ -495,7 +559,7 @@ h2.section-title {
   .wrap {
     padding-bottom: 67.5px;
   }
-  .section.paralax .outer-wrap {
+  .story.image-section .image-wrap {
     padding: 90px 0;
   }
   .shape-wrap .cost-percent-num {
@@ -520,11 +584,11 @@ h2.section-title {
     min-height: 415px;
   }
 
-  .section.cost .chart-wrap {
+  .story.cost .chart-wrap {
     width: 520px;
   }
 
-  .section.cost .shape-wrap {
+  .story.cost .shape-wrap {
     width: 250px;
   }
 
@@ -549,12 +613,12 @@ h2.section-title {
     width: 750px;
   }
 
-  .section.cost .chart-wrap {
+  .story.cost .chart-wrap {
     width: 65%;
     margin-right: 5%;
   }
 
-  .section.cost .shape-wrap {
+  .story.cost .shape-wrap {
     width: 25%;
     max-width: 200px;
   }
@@ -589,17 +653,17 @@ h2.section-title {
     width: 100%;
     padding: 0 45px 67.5px 45px;
   }
-  .section.speed .chart-text {
+  .story.speed .chart-text {
     position: static;
     max-width: none;
   }
 
-  h2.section-title {
+  h2.story-title {
     font-size: 2rem;
     line-height: 2.25rem;
   }
 
-  .section.paralax .stat-line.one {
+  .story.image-section .stat-line.one {
     font-size: 2rem;
     line-height: 2.25rem;
   }
@@ -611,12 +675,12 @@ h2.section-title {
 }
 
 @media all and (max-width: 767px) {
-  .section.cost .chart-wrap {
+  .story.cost .chart-wrap {
     width: 100%;
     margin-right: 0;
   }
 
-  .section.cost .shape-wrap {
+  .story.cost .shape-wrap {
     display: none;
     visibility: hidden;
   }
@@ -644,7 +708,7 @@ h2.section-title {
     padding-bottom: 45px;
   }
 
-  .section.paralax .outer-wrap {
+  .story.image-section .image-wrap {
     padding: 67.5px 0;
   }
 }
