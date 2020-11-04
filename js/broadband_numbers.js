@@ -33,11 +33,28 @@ jQuery(function($){
       else if (index == 7) {
         costReduceChart();
       }
+
+      var this_elem = elements[index];
+      // switch active classes on sections
+      $('.story-wrap .story').removeClass('active');
+      this_elem.addClass('active');
+
+      // switch active classes on pagination items
+      var pagination_items = $('.pagination li');
+      pagination_items.children('a').removeClass('active');
+      pagination_items.eq(index).children('a').addClass('active');
+
+      // switch pagination color based on section color
+      $('body').removeClass('pagination-white pagination-blue');
+      if (this_elem.hasClass('white') || this_elem.hasClass('gray')) {
+        $('body').addClass('pagination-blue');
+      }
+      else {
+        $('body').addClass('pagination-white');
+      }
     },
     after:function(index, elements) {
-      // switch active classes
-      $('.story-wrap .story').removeClass('active');
-      elements[index].addClass('active');
+
     },
     afterResize:function() {},
     afterRender:function() {}
@@ -45,6 +62,11 @@ jQuery(function($){
 
   $('.top-section-text .down-arrow').on('click', function() {
     $.scrollify.move("#speed");
+  });
+
+  $('.pagination a').on('click', function() {
+    var linkDest = $(this).attr('href');
+    $.scrollify.move(linkDest);
   });
 
   // initialize d3 charts
