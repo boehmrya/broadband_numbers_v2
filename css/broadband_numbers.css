@@ -76,7 +76,7 @@ h2.story-title {
 }
 
 .chart-block {
-  margin-top: 45px;
+  margin-top: 22.5px;
 }
 
 .speed-chart {
@@ -147,24 +147,39 @@ h2.story-title {
   top: 0;
 }
 
-.stat-col.three-col {
+.stat-col {
   text-align: center;
   padding: 0 15px;
   margin-top: 22.5px;
   clear: both;
+  position: relative;
+  opacity: 0;
+}
+
+.story.image-section.active .stat-col {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.story.image-section.active .stat-col.two {
+  transition-delay: 500ms;
+}
+
+.story.image-section.active .stat-col.three {
+  transition-delay: 1s;
 }
 
 .stat-wrap {
   width: 280px;
 }
 
-.stat-col.three-col.one,
-.stat-col.three-col.three {
+.stat-col.one,
+.stat-col.three {
   float: left;
   margin-left: 90px;
 }
 
-.stat-col.three-col.two {
+.stat-col.two {
   float: right;
   margin-right: 90px;
 }
@@ -457,6 +472,15 @@ h2.story-title {
   padding-bottom: 0;
 }
 
+.story.image-section .stat-block {
+  opacity: 0;
+}
+
+.story.image-section.active .stat-block {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 .story.image-section .stat-block.one {
   position: relative;
   top: 20%;
@@ -467,6 +491,7 @@ h2.story-title {
   position: relative;
   top: 60%;
   transform: translateY(-60%);
+  transition-delay: 500ms;
 }
 
 .story.image-section .stat-line {
@@ -581,6 +606,11 @@ h2.section-title {
 .section-text {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin-top: 11.25px;
+}
+
+.section-text p {
+  margin: 0;
 }
 
 @keyframes bounce {

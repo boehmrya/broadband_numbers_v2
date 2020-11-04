@@ -1,6 +1,4 @@
 jQuery(function($){
-  // initialize animations
-  AOS.init();
 
   $.scrollify({
     section : ".story-wrap .story",
@@ -12,21 +10,34 @@ jQuery(function($){
     scrollbars: true,
     standardScrollElements: "",
     setHeights: true,
-    overflowScroll: false,
+    overflowScroll: true,
     updateHash: true,
     touchScroll:true,
     before:function(index, elements) {
-
-    },
-    after:function(index, elements) {
       // disable all charts
       removeCharts();
 
+      // build chart based on story
+      if (index == 1) {
+        speedChart();
+      }
+      else if (index == 3) {
+        adoptionChart();
+      }
+      else if (index == 4) {
+        customersChart();
+      }
+      else if (index == 6) {
+        infrastructureChart();
+      }
+      else if (index == 7) {
+        costReduceChart();
+      }
+    },
+    after:function(index, elements) {
       // switch active classes
       $('.story-wrap .story').removeClass('active');
       elements[index].addClass('active');
-
-      
     },
     afterResize:function() {},
     afterRender:function() {}
@@ -37,8 +48,9 @@ jQuery(function($){
   });
 
   // initialize d3 charts
-  buildCharts();
+  //buildCharts();
 
+  /*
   function buildCharts() {
     // flags for whether charts have appeared
     var sdChart = false;
@@ -106,6 +118,7 @@ jQuery(function($){
       }
     });
   }
+  */
 
   function speedChart() {
 
@@ -686,7 +699,7 @@ jQuery(function($){
 
   bar.transition()
       .duration(2000)
-      .ease("quad-in-out")
+      .ease("ease-in-out")
       .delay(function(d, i) {
         return i / data.length * 1000;  // Dynamic delay (each item delays a little longer)
       })
@@ -824,7 +837,7 @@ jQuery(function($){
 
   bar.transition()
       .duration(2000)
-      .ease("linear")
+      .ease("ease-in-out")
       .attr("y", function(d) { return y(d.cost); })
       .attr("height", function(d) { return height - y(d.cost); })
       .each("end", function() {
@@ -898,6 +911,7 @@ jQuery(function($){
 
   function removeCostChart() {
     $('.cost-chart svg').remove();
+    $('.shape-wrap .box').removeClass('full');
   }
 
 
