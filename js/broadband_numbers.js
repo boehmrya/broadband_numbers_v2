@@ -454,7 +454,7 @@ jQuery(function($){
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", -80)
-        .attr("x", -90)
+        .attr("x", 0)
         .attr("dy", ".71em")
         .attr("class", "axis-label")
         .style("text-anchor", "end")
@@ -565,7 +565,7 @@ jQuery(function($){
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", -80)
-        .attr("x", -120)
+        .attr("x", 0)
         .attr("dy", ".71em")
         .attr("class", "axis-label")
         .style("text-anchor", "end")
@@ -612,8 +612,8 @@ jQuery(function($){
     // dimensions
     margin = {top: 120, right: 20, bottom: 80, left: 80};
     width = 1140 - margin.left - margin.right;
-    height = 600 - margin.top - margin.bottom;
-    viewBox = "0 0 1140 600";
+    height = 500 - margin.top - margin.bottom;
+    viewBox = "0 0 1140 500";
 
     parseDate = d3.time.format("%Y").parse;
 
@@ -671,7 +671,7 @@ jQuery(function($){
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", -80)
-        .attr("x", -120)
+        .attr("x", 0)
         .attr("dy", ".71em")
         .attr("class", "axis-label")
         .style("text-anchor", "end")

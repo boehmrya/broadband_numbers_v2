@@ -627,13 +627,14 @@ h2.section-title {
 
 
 @media all and (min-width: 1200px) {
-  .speed-chart,
-  .infrastructure-chart {
+  .speed-chart {
     min-height: 600px;
   }
 
+  .speed-chart,
   .adoption-chart,
   .customers-chart,
+  .infrastructure-chart,
   .cost-chart {
     min-height: 500px;
   }
