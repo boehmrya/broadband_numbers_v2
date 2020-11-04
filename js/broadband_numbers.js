@@ -12,15 +12,21 @@ jQuery(function($){
     scrollbars: true,
     standardScrollElements: "",
     setHeights: true,
-    overflowScroll: true,
+    overflowScroll: false,
     updateHash: true,
     touchScroll:true,
     before:function(index, elements) {
-      
+
     },
     after:function(index, elements) {
+      // disable all charts
+      removeCharts();
+
+      // switch active classes
       $('.story-wrap .story').removeClass('active');
       elements[index].addClass('active');
+
+      
     },
     afterResize:function() {},
     afterRender:function() {}
@@ -862,7 +868,36 @@ jQuery(function($){
         }
       });
     });
+  }
 
+  // wrapper function to remove charts on section transitions
+  function removeCharts() {
+    removeSpeedChart();
+    removeAdoptionChart();
+    removeCustomersChart();
+    removeInfraChart();
+    removeCostChart();
+  }
+
+  // functions to remove charts
+  function removeSpeedChart() {
+    $('.speed-chart svg').remove();
+  }
+
+  function removeAdoptionChart() {
+    $('.adoption-chart svg').remove();
+  }
+
+  function removeCustomersChart() {
+    $('.customers-chart svg').remove();
+  }
+
+  function removeInfraChart() {
+    $('.infrastructure-chart svg').remove();
+  }
+
+  function removeCostChart() {
+    $('.cost-chart svg').remove();
   }
 
 
