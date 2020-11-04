@@ -688,15 +688,12 @@ h2.section-title {
 }
 
 @media all and (max-width: 1199px) {
-  .wrap {
-    padding-bottom: 67.5px;
-  }
-  .story.image-section .image-wrap {
-    padding: 90px 0;
-  }
   .shape-wrap .cost-percent-num {
     font-size: 2.75rem;
     line-height: 2.75rem;
+  }
+  .pagination {
+    right: 10px;
   }
 }
 
@@ -768,22 +765,12 @@ h2.section-title {
     border-right: 100px solid transparent;
     border-top: 100px solid #5AC9E7;
   }
-
-  .stat-wrap {
-    width: auto;
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 767px) {
-  .stat-wrap {
-    width: 320px;
-  }
 }
 
 @media all and (max-width: 991px) {
   .wrap {
     width: 100%;
-    padding: 0 45px 67.5px 45px;
+    padding: 45px;
   }
   .story.speed .chart-text {
     position: static;
@@ -817,30 +804,28 @@ h2.section-title {
     visibility: hidden;
   }
 
-  .stat-col.three-col {
-    float: none;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 45px;
-  }
-
   .stat-col br {
+    display: none;
+  }
+  .stat-col.one,
+  .stat-col.three {
+    float: none;
+    margin-left: 0;
+  }
+  .stat-col.two {
+    float: none;
+    margin-right: 0;
+  }
+  .stat-wrap {
+    margin: 0 auto;
+  }
+  .pagination {
     display: none;
   }
 }
 
 @media all and (max-width: 599px) {
   .wrap {
-    padding: 0 22.5px 67.5px 22.5px;
-  }
-}
-
-@media all and (max-width: 499px) {
-  .wrap {
-    padding-bottom: 45px;
-  }
-
-  .story.image-section .image-wrap {
-    padding: 67.5px 0;
+    padding: 22.5px;
   }
 }
