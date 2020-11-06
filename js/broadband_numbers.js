@@ -36,7 +36,7 @@ jQuery(function($){
 
       var this_elem = elements[index];
       // switch active classes on sections
-      $('.story-wrap .story').removeClass('active');
+      $('.story').removeClass('active');
       this_elem.addClass('active');
 
       // switch active classes on pagination items
